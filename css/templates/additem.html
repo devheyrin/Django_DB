@@ -1,0 +1,12 @@
+{% load static %}
+<section>
+  <h1>Add item</h1>
+  <form action="{% url 'additemimpl' %}" method="get">
+    <table>
+      <tr><td>ITEM NAME</td><td><input type="text" name="name"></td></tr>
+      <tr><td>PRICE</td><td><input type="text" name="price"></td></tr>
+      <tr><td><input type="submit" value="ADDITEM"></td></tr>
+    </table>
+  </form>
+
+</section>
