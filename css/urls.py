@@ -38,4 +38,5 @@ urlpatterns = [
     path('additemimpl', views.additemimpl, name='additemimpl'),
     path('itemlist', views.itemlist, name='itemlist'),
     path('itemdetail', views.itemdetail, name='itemdetail'),
+    path('boards', views.boards, name='boards'),
 ]

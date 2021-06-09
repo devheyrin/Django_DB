@@ -34,11 +34,10 @@
       <li><a href="{% url 'javascript' %}">JavaScript</a></li>
       <li><a href="{% url 'jquery' %}">jQuery</a></li>
       <li><a href="{% url 'ajax' %}">AJAX</a></li>
-  </ul>
-  <ul id="menu">
       <li><a href="{% url 'userlist' %}">USER LIST</a></li>
       <li><a href="{% url 'additem' %}">ADD ITEM</a></li>
       <li><a href="{% url 'itemlist' %}">ITEM LIST</a></li>
+      <li><a href="{% url 'boards' %}">BOARD</a></li>
   </ul>
     {% if section != None %}
         {% include section %}

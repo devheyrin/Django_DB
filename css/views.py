@@ -177,3 +177,9 @@ def itemdetail(request):
     };
     return render(request, 'base.html',context);
 
+def boards(request):
+    context = {
+        'section': 'boards.html',
+    };
+    return render(request, 'base.html', context);
+

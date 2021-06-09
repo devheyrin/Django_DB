@@ -4,6 +4,8 @@ class Sql:
         PWD  TEXT,
         NAME TEXT
     ) ''';
+
+    # 회원 CRUD
     insert_userdb = ''' INSERT  INTO  USERDB VALUES (?,?,?) ''';
     update_userdb = ''' UPDATE  USERDB  SET  PWD=?,  NAME=?  WHERE  ID=? ''';
     delete_userdb = ''' DELETE  FROM  USERDB  WHERE  ID=? ''';
@@ -18,6 +20,18 @@ class Sql:
            REGDATE  DATE  DEFAULT  (DATETIME('now', 'localtime'))
          ) 
      ''';
+
+    make_boarddb = '''  
+             CREATE  TABLE  IF  NOT  EXISTS  BOARDDB (
+               ID INTEGER  PRIMARY KEY  AUTOINCREMENT,
+               NAME  TEXT,
+               TITLE  TEXT,
+               CONTENT TEXT,
+               REGDATE  DATE  DEFAULT  (DATETIME('now', 'localtime'))
+             ) 
+         ''';
+
+    # 상품 CRUD
     insert_itemdb = '''  
          INSERT  INTO  ITEMDB (NAME,PRICE) VALUES  (?,?) 
      ''';
@@ -32,4 +46,19 @@ class Sql:
      ''';
     selectall_itemdb = '''   
          SELECT  * FROM  ITEMDB
+     ''';
+
+    # 게시판 CRUD
+    insert_boarddb = '''INSERT  INTO  BOARDDB (NAME,TITLE,CONTENT) VALUES  (?,?,?) ''';
+    update_boarddb = '''  
+         UPDATE  BOARDDB  SET  TITLE=?,  CONTENT=?  WHERE ID=? 
+     ''';
+    delete_boarddb = '''  
+         DELETE   FROM  BOARDDB  WHERE  ID = ? 
+     ''';
+    select_boarddb = '''   
+         SELECT  *  FROM  BOARDDB  WHERE  ID = ?
+     ''';
+    selectall_boarddb = '''   
+         SELECT  * FROM  BOARDDB
      ''';
